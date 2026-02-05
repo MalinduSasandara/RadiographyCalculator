@@ -10,7 +10,14 @@ public class RadiographyService {
         return String.format("\"Minimum SOD = %.1f mm\\nSFD = %.1f mm\", sod, sfd");
     }
     //calculate new exposure time
+    public String calculateNewTime(double oldSFD, double oldTime, double newSFD) {
+        if (oldSFD <= 0 || oldTime <= 0 || newSFD <= 0) {
+            return "Error: All values must be positive numbers!";
+        }
 
+        double newTime = oldTime * (newSFD / oldSFD) * (newSFD / oldSFD);
+        return String.format("New exposure time ≈ %.2f minutes", newTime);
+    }
 }
 
 
