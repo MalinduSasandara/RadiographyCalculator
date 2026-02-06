@@ -11,7 +11,7 @@ public class RadiographyService {
     }
     //calculate new exposure time
     public String calculateNewTime(double oldSFD, double oldTime, double newSFD) {
-        if (oldSFD <= 0 || oldTime <= 0 || newSFD <= 0) {
+        if (oldSFD  <= 0 || oldTime <= 0 || newSFD <= 0) {
             return "Error: All values must be positive numbers!";
         }
 
